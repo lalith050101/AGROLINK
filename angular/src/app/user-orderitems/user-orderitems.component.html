@@ -1,0 +1,24 @@
+<app-user-nav></app-user-nav>
+<div id="medCartBody" class="container">
+  <h2 class="mt-5 pt-5" style="font-family: 'Patua One', cursive;">Products Ordered</h2>
+  <div class="col-md-11 mt-4">
+    <div class="table-responsive r-scroll">
+      <table class="table mt-3">
+        <thead>
+          <tr class="table-primary">
+            <th style="text-align:center">Product</th>
+            <th style="text-align:center">Quantity</th>
+            <th style="text-align:center">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let items of orders" class="my-row">
+            <td style="text-align:center; align-items: center; vertical-align:middle;">{{items.productName}}</td>
+            <td style="text-align:center; align-items: center; vertical-align:middle;">{{items.quantity}}</td>
+            <td style="text-align:center; align-items: center; vertical-align:middle;">{{+items.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="mt-5 ml-3">Amount: ₹{{orderData.totalPrice}}</h5>
+    </div>
+  </div>

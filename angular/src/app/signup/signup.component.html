@@ -1,0 +1,69 @@
+<app-user-nav></app-user-nav>
+<div class="container center-y">
+    <div class="row align-items-center">
+        <div class="d-none d-md-block col-lg-6 order-lg-2">
+            <div class="p-5">
+                <img class="img-fluid " src="../../assets/login.svg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div class="py-5 px-md-5 mt-4" id="signupBox">
+                <h2 class="text-center text-sm-left pl-sm-3" style="font-family: 'Patua One', cursive;">Sign up</h2>
+                <form (ngSubmit)="onsubmit()" class="mt-4">
+                    <div class="form-group">
+                        <label for="email" class="col-md-5 control-label">Email</label>
+                        <div class="col-md-9">
+                            <input id="email" [(ngModel)]="signup.email" type="email" class="form-control" name="name"
+                                placeholder="yourmail@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="username" class="col-md-5 control-label"> Username</label>
+                        <div class="col-md-9">
+                            <input id="username" [(ngModel)]="signup.username" type="text" class="form-control"
+                                name="email" placeholder="Enter your Name">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="mobilenumber" class="col-md-5 control-label">Mobile Number</label>
+                        <div class="col-md-9">
+                            <input id="mobilenumber" [(ngModel)]="signup.mobileNumber" type="text" class="form-control"
+                                name="mobilenumber" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-5 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input type="password" [(ngModel)]="signup.password" id="password" class="form-control"
+                                name="password" placeholder="Enter Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmpassword" class="col-11 col-md-5 control-label">Confirm Password</label>
+                        <div class="col-md-9">
+                            <input type="password" id="confirmpassword" [(ngModel)]="confirmPass"
+                                class="form-control" name="cpassword" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <p *ngIf="showError" class="mt-2 ml-3 text-danger">The credentials are wrong 😕</p>
+                    <p *ngIf="userExists" class="mt-2 ml-3 text-danger">The Account already exist. Please Login</p>
+                    <p *ngIf="showPassNotMatch" class="mt-2 ml-3 text-danger">The Password and Confirm Password did not match 😕</p>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button *ngIf="!showLoading" type="submit" id="submitButton"
+                                class="btn btn-primary">Submit</button>
+                            <div *ngIf="showLoading" class="spinner-border text-primary mt-1" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="m-3">Already have a account? <a routerLink="/login" id="siginLink"
+                            class="text-primary"><i>Log in</i></a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
