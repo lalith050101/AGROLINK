@@ -3,7 +3,7 @@
     <div class="row mt-3">
         <div class="d-none d-md-block col-0 col-md-6 order-lg-1">
             <div class="p-5">
-                <h2 style="font-family: 'Patua One', cursive;">Add Medicine</h2>    
+                <h2 style="font-family: 'Patua One', cursive;">Add Product</h2>    
                 <img class="img-fluid mt-5" src="../../../assets/newProduct.svg" alt="">
             </div>
         </div>
@@ -11,15 +11,15 @@
             <div id="addMedBody" class="pt-5">
                 <form (ngSubmit)="onsubmit()">
                     <div class="form-group">
-                        <label for="medName">Medicine Name</label>
+                        <label for="medName">Product Name</label>
                         <input type="text" class="form-control" [(ngModel)]="product.productName" id="medName" name="name" placeholder="Eg. Paracetamol">
                     </div>
                     <div class="form-group">
-                        <label for="medPrice">Medicine Price (in ₹)</label>
+                        <label for="medPrice">Product Price (in ₹)</label>
                         <input type="text" class="form-control" [(ngModel)]="product.price" id="medPrice" name="price" placeholder="20">
                     </div>
                     <div class="form-group">
-                        <label for="medDescription">Medicine Description</label>
+                        <label for="medDescription">Product Description</label>
                         <textarea class="form-control" [(ngModel)]="product.description" id="medDescription" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" [(ngModel)]="product.imageUrl" id="medImageURL" name="imgurl" placeholder="someurl.jpg">
                     </div>
                     <div class="form-group">
-                        <label for="medQuantity">Medicine Quantity</label>
+                        <label for="medQuantity">Product Quantity</label>
                         <input type="text" class="form-control" [(ngModel)]="product.quantity" id="medQuantity" name="quantity" placeholder="">
                     </div>
 

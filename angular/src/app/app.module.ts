@@ -30,8 +30,9 @@ import { OrdergroupComponent } from './admin/ordergroup/ordergroup.component';
 import { AcceptOrderComponent } from './admin/accept-order/accept-order.component';
 import { UserOrdergroupComponent } from './user-ordergroup/user-ordergroup.component';
 import { UserOrderitemsComponent } from './user-orderitems/user-orderitems.component';
+import { PostComponent } from './post/post.component';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     AdminComponent,
     AddproductComponent,
@@ -54,7 +55,8 @@ import { UserOrderitemsComponent } from './user-orderitems/user-orderitems.compo
     AcceptOrderComponent,
     UserOrdergroupComponent,
     UserOrderitemsComponent,
-  ],
+      PostComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

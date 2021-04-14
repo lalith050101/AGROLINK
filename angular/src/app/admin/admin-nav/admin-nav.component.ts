@@ -9,12 +9,20 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class AdminNavComponent implements OnInit {
   isAddProductVisible:boolean = false;
-
-  constructor(private route: Router, private loginService: LoginService) { }
+  isCartVisible: boolean = true;
+  isNavButtonVisible: boolean = true;
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
-    if (this.route.url == "/admin"){
+    if (this.router.url == "/admin"){
       this.isAddProductVisible = true;
+    }
+    if (this.router.url == '/login' || this.router.url == '/signup') {
+      this.isNavButtonVisible = false;
+      this.isCartVisible = false;
+    }
+    if (this.router.url == '/cart') {
+      this.isCartVisible = false;
     }
   }
   logout(): void {
@@ -23,6 +31,6 @@ export class AdminNavComponent implements OnInit {
     this.goToLogin();
   }
   goToLogin() {
-    this.route.navigateByUrl('/login');
+    this.router.navigateByUrl('/login');
   }
 }
