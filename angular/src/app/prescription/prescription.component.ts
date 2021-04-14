@@ -104,29 +104,29 @@ export class PrescriptionComponent implements OnInit {
   }
 
   goToPayment(goTo: string) {
-    const uploadImageData = new FormData();
-    uploadImageData.append(
-      'image', //localStorage.getItem('current_order')+"",
-      this.selectedFile,
-      localStorage.getItem('current_order') + '`' + this.selectedFile.name
-    );
-
-    this.httpClient
-      .post('http://localhost:8080/prescription/upload', uploadImageData)
-      .subscribe((data) => {
-        if (data){
-          this.getImage();
-          if (this.orderType == "prod"){
-            this.router.navigateByUrl(`payment/${this.payfor}?quantity=${this.quantity}`);  
-          } else {
-          this.router.navigateByUrl(`payment/${this.payfor}`);
-          }
-        } else {
-          this.imageSizeLimit = true;
-        }
-      },error => {
-        this.imageSizeLimit = true;
-      })
+    // const uploadImageData = new FormData();
+    // uploadImageData.append(
+    //   'image', //localStorage.getItem('current_order')+"",
+    //   this.selectedFile,
+    //   localStorage.getItem('current_order') + '`' + this.selectedFile.name
+    // );
+    this.router.navigateByUrl(`payment/${this.payfor}?quantity=${this.quantity}`);  
+    // this.httpClient
+    //   .post('http://localhost:8080/prescription/upload', uploadImageData)
+    //   .subscribe((data) => {
+    //     if (data){
+    //       this.getImage();
+    //       if (this.orderType == "prod"){
+    //         this.router.navigateByUrl(`payment/${this.payfor}?quantity=${this.quantity}`);  
+    //       } else {
+    //       this.router.navigateByUrl(`payment/${this.payfor}`);
+    //       }
+    //     } else {
+    //       this.imageSizeLimit = true;
+    //     }
+    //   },error => {
+    //     this.imageSizeLimit = true;
+    //   })
   }
 
   getImage() {

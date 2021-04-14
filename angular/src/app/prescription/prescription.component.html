@@ -56,18 +56,9 @@
         <img [src]="retrievedImage">
     </div>
       <img class="rounded d-block mx-auto mt-5" src="../../assets/imgUpload.svg" alt="" height="280vh" srcset="">
-      <h5 class="text-center text-sm-left  mt-5" style="font-family: 'Patua One', cursive;">Upload Prescription</h5>
-      <p *ngIf="filename !== 'null'" class="my-2">FileName: <span class="text-muted">({{filename}})</span></p>
-      <div class="custom-file">
-        <input type="file" (change)="onFileChanged($event)" class="custom-file-input" id="imgFile">
-        <label class="custom-file-label" for="imgFile">Choose file</label>
-      </div>
-      <p *ngIf="imageSizeLimit" class="text-danger mt-2 ml-1">Image size is too large</p>
-      <p class="text-danger mt-2 ml-1">{{message}}</p>
-      <button *ngIf="filename == 'null'" class="btn btn-primary mt-5 d-block ml-auto" disabled>Upload Image and Proceed
-        to Payment</button>
-      <button *ngIf="filename !== 'null'" (click)="goToPayment(payfor)"
-        class="btn btn-primary mt-5 d-block ml-auto">Upload Image and Proceed to Payment</button>
+      
+      <button  (click)="goToPayment(payfor)"
+        class="btn btn-primary mt-5 d-block ml-auto">Proceed to Payment</button>
     </div>
   </div>
 </div>

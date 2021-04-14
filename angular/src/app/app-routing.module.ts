@@ -19,18 +19,20 @@ import { OrdergroupComponent } from './admin/ordergroup/ordergroup.component';
 import { AcceptOrderComponent } from './admin/accept-order/accept-order.component';
 import { UserOrdergroupComponent } from './user-ordergroup/user-ordergroup.component';
 import { UserOrderitemsComponent } from './user-orderitems/user-orderitems.component';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   // ADMIN routes here
-  {path:'admin', component:AdminComponent,canActivate:[AdminGuard]},
-  {path:'addProduct', component:AddproductComponent,canActivate:[AdminGuard]},
-  {path:'admin/orders', component:OrderlistComponent,canActivate:[AdminGuard]},
-  {path:'admin/edit/:id', component:EditproductComponent,canActivate:[AdminGuard]},
-  {path:'admin/ordergroup', component:OrdergroupComponent,canActivate:[AdminGuard]},
-  {path:'admin/ordergroup/:id', component:AcceptOrderComponent,canActivate:[AdminGuard]},
+  {path:'admin', component:AdminComponent,canActivate:[UserGuard]},
+  {path:'addProduct', component:AddproductComponent,canActivate:[UserGuard]},
+  {path:'admin/orders', component:OrderlistComponent,canActivate:[UserGuard]},
+  {path:'admin/edit/:id', component:EditproductComponent,canActivate:[UserGuard]},
+  {path:'admin/ordergroup', component:OrdergroupComponent,canActivate:[UserGuard]},
+  {path:'admin/ordergroup/:id', component:AcceptOrderComponent,canActivate:[UserGuard]},
 
   // USER routes here
   {path:'',redirectTo: 'login', pathMatch:'full'},
+  {path:'post',component:PostComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'home',component:HomeComponent,canActivate:[UserGuard]},
