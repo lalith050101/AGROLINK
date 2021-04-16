@@ -11,14 +11,14 @@ Filters for products like Low to High or High to Low.
 Payment Gateway for ordering products.  
 
 ## Technologies Used:
-* Frontend:
+* Frontend:  
     HTML  
     CSS  
     TypeScript  
     Bootstrap  
     Angular  
   
-* Backend:
+* Backend:  
     OpenJDK  
     Spring Boot  
     Spring Web (Rest Controller)  
