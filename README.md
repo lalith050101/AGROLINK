@@ -1,6 +1,6 @@
 # AGROLINK (Under Development)
 
-A Java Full Stack Web App for Connecting Farmers and make them more profitable.
+A Full Stack Web App for Connecting Farmers and make them more profitable.
 
 ## Functional Features:
 Farmers can keep posts and attach photos.
